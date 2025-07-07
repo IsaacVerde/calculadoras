@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Lateral</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!--Menu Lateral-->
+    <aside class="menu-lateral">
+        <div class="grupo-menu">
+            <button class="categoria-btn">🔢 Aritmética</button>
+            <div class="submenu">
+                <div class="icone" data-target="bhaskara"><i class="fas fa-square-root-variable"></i></div>
+                <div class="icone" data-target="media"><i class="fas fa-calculator"></i></div>
+                <div class="icone" data-target="porcentagem"><i class="fas fa-percent"></i></div>
+                <div class="icone" data-target="regra"><i class="fas fa-divide"></i></div>
+                <div class="icone" data-target="ponderada"><i class="fa-solid fa-scale-balanced"></i></div>
+            </div>
+        </div>
+
+        <div class="grupo-menu">
+            <button class="categoria-btn">💰 Financeiras</button>
+            <div class="submenu">
+                <div class="icone" data-target="juros-simples"><i class="fas fa-money-bill-trend-up"></i></div>
+                <div class="icone" data-target="parcelas-fixas"><i class="fas fa-chart-line"></i></div>
+                <!-- Mais calculadoras -->
+            </div>
+        </div>
+    </aside>
+
+
+    <!--Calculadoras-->
+    <main class="conteudo">
+
+        <!--Cards na pagina inical-->
+        <section id="home" class="tela-inicial">
+            <h1>Escolha sua calculadora</h1>
+            <div id="cards-container"></div>
+        </section>
+
+        <section id="bhaskara" class="calculadora ">
+            <!--Calculadora de Bhaskara aqui-->
+
+            <div class="calculadora-estilo">
+                <h1>Calculadora de Bhaskara</h1>
+                <!--LABEL DEFINE UM ROTULO OU ETIQUETA, E O IMPUT COLETA OS DADOS-->
+                <form id="form-bhaskara">
+                    <label for="a"> valor de A</label>
+                    <input type="number" id="a" required>
+
+                    <label for="b"> valor de B</label>
+                    <input type="number" id="b" required>
+
+                    <label for="c"> valor de C</label>
+                    <input type="number" id="c" required>
+
+                    <button type="submit">Calcular</button>
+
+                </form>
+
+                <div id="resultado-bhaskara"></div>
+
+        </section>
+
+
+        <section id="media" class="calculadora">
+            <!--Calculadora de Média aqui-->
+
+            <div class="calculadora-estilo">
+                <h1>Calculadora de Média Aritmética 📚</h1>
+
+                <form id="form-media">
+                    <label for="n1">Nota 1</label>
+                    <input id="n1" type="number" />
+
+                    <label for="n2">Nota 2</label>
+                    <input id="n2" type="number" />
+
+                    <label for="n3">Nota 3</label>
+                    <input id="n3" type="number" />
+
+                    <label for="n4">Nota 4</label>
+                    <input id="n4" type="number" />
+
+                    <button type="submit"> Calcular Média🔎</button>
+                </form>
+
+                <div id="resultado-media"></div>
+
+        </section>
+
+        <section id="porcentagem" class="calculadora">
+            <div class="calculadora-estilo">
+                <h1>Calculadora de Porcentagem</h1>
+
+                <form id="form-porcentagem">
+                    <label for="valor">Qual valor?</label>
+                    <input id="valor" type="number" required>
+
+                    <label for="input-porcentagem">Qual porcentagem</label>
+                    <input id="input-porcentagem" type="number" required>
+
+                    <button type="submit" class="btn ">Calcular</button>
+                </form>
+
+                <div id="resultado-porcentagem"></div>
+            </div>
+        </section>
+
+        <section id="juros-simples" class="calculadora">
+            <div class="calculadora-estilo">
+                <h1>Calculadora de Juros Simples 💰</h1>
+                <!-- Formulário e resultado aqui -->
+
+                <!--CRIAÇÃO DE SELEÇÃO PARA JUROS COMPOSTOS OU SIMPLES-->
+                <div id="tipo-juros-container">
+                    <label>
+                        <input type="radio" name="tipoJuros" value="simples" checked />
+                        Juros Simples
+                    </label>
+                    <label>
+                        <input type="radio" name="tipoJuros" value="compostos" />
+                        Juros Compostos
+                    </label>
+                </div>
+
+                <form id="form-juros">
+                    <label for="capital">Capital Inicial (R$):</label>
+                    <input type="number" id="capitalJuros" />
+
+                    <label for="taxa">Taxa de Juros (%):</label>
+                    <input type="number" id="taxaJuros" />
+
+                    <label for="tempo">Tempo (meses):</label>
+                    <input type="number" id="tempoJuros" />
+
+                    <button type="submit">Calcular</button>
+                </form>
+
+                <div id="resultadoJuros"></div>
+
+
+            </div>
+        </section>
+
+        <section id="parcelas-fixas" class="calculadora">
+            <div class="calculadora-estilo">
+                <h1>Simulador de Parcelas Fixas 🗓️</h1>
+                <form id="form-parcelas">
+                    <label for="valorTotal">Valor total (R$):</label>
+                    <input type="number" id="valorTotal" required />
+
+                    <label for="numeroParcelas">Número de parcelas:</label>
+                    <input type="number" id="numeroParcelas" required />
+
+                    <label for="taxaParcelas">Juros mensal (%):</label>
+                    <input type="number" id="taxaParcelas" required />
+
+                    <button type="submit">Simular</button>
+                </form>
+
+                <div id="resultadoParcelas"></div>
+            </div>
+        </section>
+
+
+
+        <section id="regra" class="calculadora">
+            <!--Calculadora de Regra de Três aqui-->
+            <div class="calculator-container calculadora-estilo">
+                <h1>Calculadora de Regra de Tres</h1>
+                <!--REFORÇANDO LABEL CRIA A ETIQUETA OU ROTULO E O IMPUT COLETA OS DADOS-->
+                <form id="form-regra-de-tres">
+                    <label for="a">Valor de Referencia 1</label>
+                    <input id="regra-a">
+                    <label for="b">Valor de Referencia 2 </label>
+                    <input id="regra-b">
+                    <label for="c">Valor de Referencia 3 </label>
+                    <input id="regra-c">
+
+                    <button type="submit">Calcular</button>
+
+                    <div id="resultadoRegra"></div>
+                </form>
+            </div>
+
+        </section>
+
+
+        <section id="ponderada" class="calculadora">
+            <!--Calculadora de Média Ponderada-->
+            <div class="calculator-container calculadora-estilo">
+                <h1>Calculadora Média Ponderada</h1>
+
+                <form id="form-ponderada">
+                    <label>Nota 1</label>
+                    <input type="number" id="n1Ponderada">
+                    <label>Peso 1</label>
+                    <input type="number" id="p1Ponderada">
+
+
+                    <label>Nota 2</label>
+                    <input type="number" id="n2Ponderada">
+                    <label>Peso 2</label>
+                    <input type="number" id="p2Ponderada">
+
+                    <button type="submit">Calcular</button>
+                </form>
+
+                <div id="resultadoPonderada"></div>
+
+        </section>
+
+        <!-- Scripts específicos de cada calculadora -->
+        <script src="scripts/bhaskara.js"></script>
+        <script src="scripts/mediaAritmetica.js"></script>
+        <script src="scripts/porcentagem.js"></script>
+        <script src="scripts/ponderada.js"></script>
+        <script src="scripts/regrasDeTres.js"></script>
+        <script src="scripts/jurosSimples.js"></script>
+        <script src="./scripts/parcelasFixas.js"></script>
+        <script src="./scripts/script.js"></script>
+    </main>
+</body>
+
+</html>
