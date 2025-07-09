@@ -1,3 +1,8 @@
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: sans-serif;
@@ -136,9 +141,45 @@ body {
   background-color: #303f9f;
 }
 
-@media screen and (max-width: 480px) {
-  .calculadora-estilo {
+/* Substitua sua media query antiga por esta */
+@media screen and (max-width: 768px) { /* Aumentei o ponto de quebra para pegar tablets também */
+  
+  body {
+    /* Faz o menu ir para cima e o conteúdo para baixo */
+    flex-direction: column;
+  }
+
+  .menu-lateral {
+    /* Transforma o menu em uma barra horizontal no topo */
+    width: 100%;
+    height: auto;
+    flex-direction: row; /* Alinha os itens lado a lado */
+    justify-content: flex-start; /* Alinha no começo */
+    gap: 20px;
+    padding: 15px;
+    overflow-x: auto; /* Adiciona scroll horizontal se os itens não couberem */
+  }
+
+  .grupo-menu.ativo .submenu {
+    /* Ajusta o submenu para o novo layout horizontal */
+    position: absolute;
+    background-color: #3f51b5;
+    border-radius: 8px;
+    padding: 10px;
+    top: 70px; /* Posição abaixo do menu principal */
+    max-height: 500px;
+    flex-direction: row; /* Ícones lado a lado */
+  }
+
+  .conteudo {
+    /* Diminui o espaçamento geral do conteúdo */
     padding: 20px;
+  }
+
+  .calculadora-estilo {
+    /* Diminui o espaçamento da caixa da calculadora */
+    padding: 20px;
+    margin: 20px 0; /* Ajusta a margem vertical e remove a horizontal */
   }
 
   .calculadora-estilo button {
