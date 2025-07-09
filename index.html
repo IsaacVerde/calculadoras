@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Menu Lateral</title>
+    <title>Calculadoras</title>
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
@@ -21,6 +21,7 @@
                 <div class="icone" data-target="porcentagem"><i class="fas fa-percent"></i></div>
                 <div class="icone" data-target="regra"><i class="fas fa-divide"></i></div>
                 <div class="icone" data-target="ponderada"><i class="fa-solid fa-scale-balanced"></i></div>
+
             </div>
         </div>
 
@@ -29,9 +30,50 @@
             <div class="submenu">
                 <div class="icone" data-target="juros-simples"><i class="fas fa-money-bill-trend-up"></i></div>
                 <div class="icone" data-target="parcelas-fixas"><i class="fas fa-chart-line"></i></div>
+                <div class="icone" data-target="conversor-moedas"><i class="fas fa-money-bill-transfer"></i></div>
                 <!-- Mais calculadoras -->
             </div>
         </div>
+
+        <div class="grupo-menu">
+            <button class="categoria-btn">🧬 Saúde e Bem-estar</button>
+            <div class="submenu">
+                <div class="icone" data-target="imc">
+                    <i class="fas fa-weight-scale"></i>
+                </div>
+                <div class="icone" data-target="tmb">
+                    <i class="fas fa-fire"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grupo-menu">
+            <button class="categoria-btn">💻 Para Devs</button>
+            <div class="submenu">
+                <div class="icone" data-target="conversor-bases">
+                    <i class="fas fa-terminal"></i>
+                </div>
+                <div class="icone" data-target="conversor-cores">
+                    <i class="fas fa-palette"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="grupo-menu">
+            <button class="categoria-btn">⏳ Tempo e Datas</button>
+            <div class="submenu">
+                <div class="icone" data-target="dias-entre-datas">
+                    <i class="fas fa-calendar-days"></i>
+                </div>
+                <div class="icone" data-target="conversor-tempo">
+                    <i class="fas fa-hourglass-half"></i>
+                </div>
+
+            </div>
+        </div>
+
     </aside>
 
 
@@ -170,7 +212,6 @@
         </section>
 
 
-
         <section id="regra" class="calculadora">
             <!--Calculadora de Regra de Três aqui-->
             <div class="calculator-container calculadora-estilo">
@@ -217,6 +258,194 @@
 
         </section>
 
+        <section id="conversor-moedas" class="calculadora">
+            <div class="calculadora-estilo">
+                <h1>Conversor de Moedas 💱</h1>
+
+                <form id="form-conversor-moedas">
+                    <label for="valor-conversao">Valor a converter:</label>
+                    <input type="number" id="valor-conversao" required />
+
+                    <label for="moeda-origem">Moeda de origem:</label>
+                    <select id="moeda-origem">
+                        <option value="BRL">Real (BRL)</option>
+                        <option value="USD">Dólar (USD)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                    </select>
+
+                    <label for="moeda-destino">Converter para:</label>
+                    <select id="moeda-destino">
+                        <option value="USD">Dólar (USD)</option>
+                        <option value="BRL">Real (BRL)</option>
+                        <option value="EUR">Euro (EUR)</option>
+                    </select>
+
+                    <button type="submit">Converter</button>
+                </form>
+
+                <div id="resultado-conversor-moedas"></div>
+            </div>
+        </section>
+
+
+
+        <section id="imc" class="calculadora">
+            <div class="calculadora-estilo">
+                <h1>Calculadora de IMC</h1>
+                <form id="form-imc">
+                    <label for="peso">Seu Peso (kg):</label>
+                    <input type="number" id="peso" step="0.1" required>
+
+                    <label for="altura">Sua Altura (m):</label>
+                    <input type="number" id="altura" step="0.01" placeholder="Ex: 1.75" required>
+
+                    <button type="submit">Calcular IMC</button>
+                </form>
+                <div id="resultado-imc"></div>
+            </div>
+        </section>
+
+        <section id="tmb" class="calculadora">
+            <div class="calculadora-estilo">
+                <h1>Calculadora de TMB (Taxa Metabólica Basal)</h1>
+                <form id="form-tmb">
+                    <label for="sexo-tmb">Sexo:</label>
+                    <select id="sexo-tmb" required>
+                        <option value="homem">Homem</option>
+                        <option value="mulher">Mulher</option>
+                    </select>
+
+                    <label for="peso-tmb">Seu Peso (kg):</label>
+                    <input type="number" id="peso-tmb" step="0.1" required>
+
+                    <label for="altura-tmb">Sua Altura (cm):</label>
+                    <input type="number" id="altura-tmb" step="1" placeholder="Ex: 175" required>
+
+                    <label for="idade-tmb">Sua Idade:</label>
+                    <input type="number" id="idade-tmb" required>
+
+                    <button type="submit">Calcular TMB</button>
+                </form>
+                <div id="resultado-tmb"></div>
+            </div>
+        </section>
+
+
+        <section id="conversor-bases" class="calculadora">
+            <div class="calculadora-estilo">
+                <h1>Conversor de Bases Numéricas</h1>
+                <form id="form-conversor-bases">
+
+                    <label for="valor-base">Valor a ser convertido:</label>
+                    <input type="text" id="valor-base" required>
+
+                    <label for="base-origem">Converter de:</label>
+                    <select id="base-origem">
+                        <option value="10" selected>Decimal</option>
+                        <option value="2">Binário</option>
+                        <option value="16">Hexadecimal</option>
+                    </select>
+
+                    <label for="base-destino">Converter para:</label>
+                    <select id="base-destino">
+                        <option value="2">Binário</option>
+                        <option value="10">Decimal</option>
+                        <option value="16" selected>Hexadecimal</option>
+                    </select>
+
+                </form>
+                <div id="resultado-conversor-bases">
+                </div>
+            </div>
+        </section>
+
+
+        <section id="conversor-cores" class="calculadora">
+            <div class="calculadora-estilo">
+                <h1>Conversor de Cores</h1>
+
+                <div id="preview-cor"
+                    style="width: 100%; height: 100px; border-radius: 8px; border: 1px solid #ccc; margin-bottom: 20px; transition: background-color 0.3s;">
+                </div>
+
+                <form id="form-conversor-cores">
+                    <label for="hex-input">HEX:</label>
+                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                        <input type="text" id="hex-input" placeholder="#FFFFFF"
+                            style="flex-grow: 1; font-family: 'Courier New', monospace;">
+                        <input type="color" id="color-picker-input" value="#FFFFFF"
+                            style="height: 40px; padding: 0; border: none; background: none; cursor: pointer; width: 50px;">
+                    </div>
+
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <label style="margin: 0;">RGB:</label>
+                        <input type="number" id="rgb-r-input" placeholder="255" min="0" max="255">
+                        <input type="number" id="rgb-g-input" placeholder="255" min="0" max="255">
+                        <input type="number" id="rgb-b-input" placeholder="255" min="0" max="255">
+                    </div>
+
+                    <div style="display: flex; gap: 10px; align-items: center; margin-top: 10px;">
+                        <label style="margin: 0;">HSL:</label>
+                        <input type="number" id="hsl-h-input" placeholder="0" min="0" max="360">
+                        <input type="number" id="hsl-s-input" placeholder="100" min="0" max="100">
+                        <input type="number" id="hsl-l-input" placeholder="100" min="0" max="100">
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section id="dias-entre-datas" class="calculadora">
+            <div class="calculadora-estilo">
+                <h1>Calculadora de Dias Entre Datas</h1>
+                <form id="form-dias-entre-datas">
+
+                    <label for="data-inicio">Data Inicial:</label>
+                    <input type="date" id="data-inicio" required>
+
+                    <label for="data-final">Data Final:</label>
+                    <input type="date" id="data-final" required>
+
+                    <button type="submit">Calcular Diferença</button>
+                </form>
+                <div id="resultado-dias-entre-datas">
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="conversor-tempo" class="calculadora">
+            <div class="calculadora-estilo">
+                <h1>Conversor de Tempo</h1>
+
+                <form id="form-hms-para-segundos">
+                    <h3>Converter para Segundos Totais</h3>
+                    <div style="display: flex; gap: 10px; align-items: center;">
+                        <input type="number" id="input-horas" placeholder="Horas" min="0">
+                        <span>:</span>
+                        <input type="number" id="input-minutos" placeholder="Min" min="0" max="59">
+                        <span>:</span>
+                        <input type="number" id="input-segundos" placeholder="Seg" min="0" max="59">
+                    </div>
+                    <button type="submit">Converter para Segundos</button>
+                    <div id="resultado-para-segundos" style="margin-top: 10px; font-weight: bold;"></div>
+                </form>
+
+                <hr style="margin: 30px 0;">
+
+                <form id="form-segundos-para-hms">
+                    <h3>Converter Segundos para H:M:S</h3>
+                    <label for="input-total-segundos">Total de Segundos:</label>
+                    <input type="number" id="input-total-segundos" placeholder="Ex: 3661" min="0">
+                    <button type="submit">Converter para H:M:S</button>
+                    <div id="resultado-para-hms" style="margin-top: 10px; font-weight: bold; font-size: 1.5rem;"></div>
+                </form>
+            </div>
+        </section>
+
+
+
+
         <!-- Scripts específicos de cada calculadora -->
         <script src="scripts/bhaskara.js"></script>
         <script src="scripts/mediaAritmetica.js"></script>
@@ -225,7 +454,15 @@
         <script src="scripts/regrasDeTres.js"></script>
         <script src="scripts/jurosSimples.js"></script>
         <script src="./scripts/parcelasFixas.js"></script>
+        <script src="./scripts/conversorMoedas.js"></script>
+        <script src="./scripts/imc.js"></script>
+        <script src="./scripts/tmb.js"></script>
+        <script src="./scripts/conversorBases.js"></script>
+        <script src="./scripts/conversorCores.js"></script>
+        <script src="./scripts/diasEntreDatas.js"></script>
+        <script src="./scripts/conversorTempo.js"></script>
         <script src="./scripts/script.js"></script>
+
     </main>
 </body>
 

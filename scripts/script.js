@@ -42,7 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
     { id: "ponderada", nome: "Média Ponderada", icon: "fa-scale-balanced" },
     { id: "juros-simples", nome: "Juros Simples", icon: "fa-money-bill-trend-up" },
     { id: "juros-compostos", nome: "Juros Compostos", icon: "fa-chart-line" },
-  ];
+    { id: "conversor-moedas", nome:"Conversor de Moedas", icon:"fas fa-money-bill-transfer"},
+    { id: "imc", nome: "Cálculo de IMC", icon: "fa-weight-scale" },
+    { id: "tmb", nome: "Cálculo de TMB", icon: "fa-fire" },
+    { id: "conversor-bases", nome: "Conversor de Bases", icon: "fa-terminal" },
+    { id: "conversor-cores", nome: "Conversor de Cores", icon: "fa-palette" },
+    { id: "dias-entre-datas", nome: "Dias Entre Datas", icon: "fa-calendar-days" },
+    { id: "conversor-tempo", nome: "Conversor de Tempo", icon: "fa-hourglass-half" },
+    ];
 
   calculadoras.forEach(calc => {
     const card = document.createElement("div");
